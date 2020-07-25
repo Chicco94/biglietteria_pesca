@@ -8,10 +8,13 @@ class Biglietto():
     def __repr__(self):
         return '{}\n'.format(self.numero) 
 
+
+
 def select_all():
     with open(path) as f:
         content = f.readlines() 
-    return [Biglietto(int(x.strip())) for x in content if c.strip() != ""]
+    return [Biglietto(int(x.strip())) for x in content if x.strip() != ""]
+
 
 def delete(biglietto:Biglietto):
     with open(path, "r") as f:
@@ -22,7 +25,6 @@ def delete(biglietto:Biglietto):
                 f.write(line)
 
  
-
 def insert(biglietto:Biglietto):
     f = open(path, "a")
     f.write(biglietto.__repr__())

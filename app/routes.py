@@ -1,6 +1,6 @@
 import random
 from app import app
-from models import *
+from app.models import *
 from app.forms import PreEstrazioneForm,PostEstrazioneForm
 from flask import render_template, flash, redirect, url_for
 
@@ -25,7 +25,7 @@ def pre_estrazione():
     return render_template('pre_estrazione.html', form=form)
 
 
-@app.route('/post_estrazione')
+@app.route('/post_estrazione', methods=['GET', 'POST'])
 def post_estrazione():
     form = PostEstrazioneForm()
     if form.validate_on_submit():
