@@ -1,13 +1,16 @@
 import random
 from app import app
+from models import *
 from app.forms import PreEstrazioneForm,PostEstrazioneForm
 from flask import render_template, flash, redirect, url_for
 
-BIGLIETTI = [i for i in range(10)]
+
 def estrai():
-    global BIGLIETTI
-    random.shuffle(BIGLIETTI)
-    return BIGLIETTI.pop()
+    biglietti = select_all()
+    random.shuffle(biglietti)
+    biglietto = biglietti.pop()
+    delete(biglietto)
+    return biglietto
 
 @app.route('/')
 @app.route('/index')
