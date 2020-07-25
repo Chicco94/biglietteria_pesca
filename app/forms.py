@@ -3,7 +3,7 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
 
 class PreEstrazioneForm(FlaskForm):
-    submit = SubmitField('Prendi un biglietto')
+    submit = SubmitField('')
 
 class PostEstrazioneForm(FlaskForm):
-    submit = SubmitField('Estrai di nuovo')
+    submit = SubmitField('')
