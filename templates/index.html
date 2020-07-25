@@ -3,7 +3,19 @@
  
 <head>
 	<title>Python Flask Bucket List App</title>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type=text/javascript>
+			$(function() {
+			$('a#test').bind('click', function() {
+				$.getJSON('/background_process_test',
+					function(data) {
+				//do nothing
+				});
+				return false;
+			});
+			});
+	</script>
+
 	<style>
 		.button {
 		  position: relative;
@@ -51,17 +63,20 @@
 			height: 100vh;
             background-color: white;
             flex-wrap: wrap;
-            display: flex;">
-		<button class="button" 
-				style="
-					width: 300px;
-					height: 300px;
-					border-radius: 50%;
-  					margin: auto;">
-			<h1 style="color: white;">
-				Prendi un biglietto
-			</h1>
-        </button>
+			display: flex;">
+		<a href=# id=test>
+			<button class="button btn btn-default" 
+					style="
+						width: 300px;
+						height: 300px;
+						border-radius: 50%;
+						margin: auto;"
+					>
+				<h1 style="color: white;">
+					{{ variable }}
+				</h1>
+			</button>
+		</a>
     </div>
 </body>
  
