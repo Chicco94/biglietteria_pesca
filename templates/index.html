@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+	<title>Python Flask Bucket List App</title>
+	
+	<style>
+		.button {
+		  position: relative;
+		  background-color: salmon;
+		  border: none;
+		  font-size: 28px;
+		  color: #FFFFFF;
+		  padding: 20px;
+		  width: 200px;
+		  text-align: center;
+		  -webkit-transition-duration: 0.4s; /* Safari */
+		  transition-duration: 0.4s;
+		  text-decoration: none;
+		  overflow: hidden;
+		  cursor: pointer;
+		}
+		
+		.button:after {
+		  content: "";
+		  border: none;
+		  background: lightsalmon;
+		  display: block;
+		  position: absolute;
+		  padding-top: 300%;
+		  padding-left: 350%;
+		  margin-left: -20px!important;
+		  margin-top: -120%;
+		  opacity: 0;
+		  transition: all 0.8s
+		}
+		
+		.button:active:after {
+		  padding: 0;
+		  margin: 0;
+		  border: none;
+		  opacity: 1;
+		  transition: 0s
+		}
+	</style>
+</head>
+ 
+<body background="black">
+	<div style="
+			width: 100vw;
+			height: 100vh;
+            background-color: white;
+            flex-wrap: wrap;
+            display: flex;">
+		<button class="button" 
+				style="
+					width: 300px;
+					height: 300px;
+					border-radius: 50%;
+  					margin: auto;">
+			<h1 style="color: white;">
+				Prendi un biglietto
+			</h1>
+        </button>
+    </div>
+</body>
+ 
+</html>
