@@ -1,22 +1,41 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div style="
-		width: 100vw;
-		height: 100vh;
-		background-color: white;
-		flex-wrap: wrap;
-		display: flex;">
-	<button class="button" 
-			style="
-				width: 300px;
-				height: 300px;
-				border-radius: 50%;
-				margin: auto;"
-			>
-		<h1 style="color: white;">
-			{{ numero }}
-		</h1>
-	</button>
-</div>
+<form action="" method="post">
+	{{ form.hidden_tag() }}
+	<div style="
+			width: 100vw;
+			height: 75vh;
+			background-color: white;
+			flex-wrap: wrap;
+			display: flex;">
+		<button class="button" 
+				style="
+					width: 300px;
+					height: 300px;
+					border-radius: 50%;
+					margin: auto;"
+				>
+			<h1 style="color: white;">
+				{{ numero }}
+			</h1>
+		</button>
+	</div>
+	<div style="
+			width: 100vw;
+			height: 25vh;
+			background-color: white;
+			flex-wrap: wrap;
+			display: flex;">
+		<button class="button" 
+				style="
+					background-color: limegreen;
+					width: 300px;
+					height: 100px;
+					margin: auto;"
+				>
+			{{form.submit()}}
+		</button>
+	</div>
+</form>
 {% endblock %}
