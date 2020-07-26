@@ -3,6 +3,7 @@ from config import Config
 
 app = Flask(__name__)
 app.config.from_object(Config)
+app.static_folder = 'static'
 path = "app/files/biglietti.txt"
 
 from app import routes, models
