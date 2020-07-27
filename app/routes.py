@@ -5,7 +5,6 @@ from app.forms import PreEstrazioneForm,PostEstrazioneForm
 from flask import render_template, flash, redirect, url_for
 
 ALREADY_DREW = False
-BIGLIETTO = None
 
 def estrai():
     biglietti = select_all()
@@ -34,11 +33,11 @@ def pre_estrazione():
 @app.route('/post_estrazione', methods=['GET', 'POST'])
 def post_estrazione():
     global ALREADY_DREW
-    global BIGLIETTO
     form = PostEstrazioneForm()
     if not ALREADY_DREW:
         BIGLIETTO = estrai()
         BIGLIETTO.printZebra()
+        ALREADY_DREW = True
     if form.validate_on_submit():
         return redirect(url_for('pre_estrazione'))
     return render_template('post_estrazione.html', numero = BIGLIETTO, form = form)
