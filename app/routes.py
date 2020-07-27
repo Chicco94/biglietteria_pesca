@@ -14,10 +14,12 @@ def estrai():
     delete(biglietto)
     return biglietto
 
+
 @app.route('/')
 @app.route('/index')
 def index():
     return render_template('index.html')
+
 
 @app.route('/pre_estrazione', methods=['GET', 'POST'])
 def pre_estrazione():
@@ -36,6 +38,7 @@ def post_estrazione():
     form = PostEstrazioneForm()
     if not ALREADY_DREW:
         BIGLIETTO = estrai()
+        BIGLIETTO.printZebra()
     if form.validate_on_submit():
         return redirect(url_for('pre_estrazione'))
     return render_template('post_estrazione.html', numero = BIGLIETTO, form = form)

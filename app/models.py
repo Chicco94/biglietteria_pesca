@@ -1,4 +1,8 @@
 from app import path
+import os
+from PIL import Image
+import zpl
+
 
 class Biglietto():
     
@@ -6,8 +10,16 @@ class Biglietto():
         self.numero = numero
 
     def __repr__(self):
-        return '{}\n'.format(self.numero) 
+        return '{}\n'.format(self.numero)
 
+    def printZebra(self):
+        l = zpl.Label(60,60)
+
+        l.origin(0,20)
+        l.write_text(str(self.numero), char_height=10, char_width=8, line_width=60, justification='C')
+        l.endorigin()
+
+        l.preview()
 
 
 def select_all():
