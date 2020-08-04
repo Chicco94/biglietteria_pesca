@@ -40,4 +40,4 @@ def post_estrazione():
         ALREADY_DREW = True
     if form.validate_on_submit():
         return redirect(url_for('pre_estrazione'))
-    return render_template('post_estrazione.html', numero = BIGLIETTO, form = form)
+    return render_template('post_estrazione.html', numero = BIGLIETTO.numero, form = form)
