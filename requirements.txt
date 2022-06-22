@@ -39,7 +39,7 @@ MarkupSafe==1.1.1
 matplotlib==3.2.2
 mccabe==0.6.1
 netifaces==0.10.4
-numpy==1.19.0
+numpy==1.22.0
 oauth==1.0.1
 olefile==0.45.1
 opencv-contrib-python==4.2.0.34
